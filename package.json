@@ -1,0 +1,48 @@
+{
+  "name": "prathamapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "dependencies": {
+    "@google-pay/button-react": "^3.1.0",
+    "@srexi/purecounterjs": "^1.5.0",
+    "aos": "^2.3.4",
+    "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "emailjs-com": "^3.2.0",
+    "express": "^4.21.2",
+    "glightbox": "^3.3.1",
+    "imagesloaded": "^5.0.0",
+    "isotope-layout": "^3.0.6",
+    "pure_counter": "^0.1.9",
+    "qrcode.react": "^4.2.0",
+    "razorpay": "^2.9.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.28.2",
+    "react-scripts": "^5.0.1",
+    "react-scroll": "^1.9.0",
+    "swiper": "^11.2.1",
+    "web-vitals": "^4.2.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
