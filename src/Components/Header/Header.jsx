@@ -72,14 +72,6 @@ function Header() {
     // Initialize GLightbox
     GLightbox({ selector: ".glightbox" });
 
-    // Initialize Swiper
-    const initSwiper = () => {
-      document.querySelectorAll(".init-swiper").forEach((swiperElement) => {
-        let config = JSON.parse(swiperElement.querySelector(".swiper-config").innerHTML.trim());
-        new Swiper(swiperElement, config);
-      });
-    };
-    window.addEventListener("load", initSwiper);
 
     // Initialize Isotope
     document.querySelectorAll(".isotope-layout").forEach((isotopeItem) => {

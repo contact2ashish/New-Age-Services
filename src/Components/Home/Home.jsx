@@ -1,41 +1,13 @@
 import React, { useEffect,useState } from "react";
 import emailjs from "emailjs-com";
-
-import Swiper from 'swiper';
-import 'swiper/css';
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
 
 
 const Home = () => {
-  useEffect(() => {
-    const swiperConfig = {
-      loop: true,
-      speed: 600,
-      autoplay: { delay: 5000 },
-      slidesPerView: "auto",
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true
-      },
-      breakpoints: {
-        320: { slidesPerView: 2, spaceBetween: 40 },
-        480: { slidesPerView: 3, spaceBetween: 60 },
-        640: { slidesPerView: 4, spaceBetween: 80 },
-        992: { slidesPerView: 6, spaceBetween: 120 }
-      }
-    };
-  
-    const swiper = new Swiper('.swiper-container', swiperConfig);
-  
-    return () => {
-      swiper.destroy(true, true); // Cleanup Swiper instance when component unmounts
-    };
-  }, []);
-  
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -293,31 +265,43 @@ const Home = () => {
           </div>
         </div>
       </section>
+      </section>
       
 
-        <section id="clients" className="clients section">
-          <div className="container">
-            <div className="swiper-container">
-              <div className="swiper-wrapper align-items-center">
-                <div className="swiper-slide"><img src="/Partners/1.png" className="img-fluid" alt="Client 1" /></div>
-                <div className="swiper-slide"><img src="/Partners/2.png" className="img-fluid" alt="Client 2" /></div>
-                <div className="swiper-slide"><img src="/Partners/3.png" className="img-fluid" alt="Client 3" /></div>
-                <div className="swiper-slide"><img src="/Partners/4.png" className="img-fluid" alt="Client 4" /></div>
-                <div className="swiper-slide"><img src="/Partners/5.png" className="img-fluid" alt="Client 5" /></div>
-                <div className="swiper-slide"><img src="/Partners/6.png" className="img-fluid" alt="Client 6" /></div>
-                <div className="swiper-slide"><img src="/Partners/7.png" className="img-fluid" alt="Client 7" /></div>
-                <div className="swiper-slide"><img src="/Partners/8.png" className="img-fluid" alt="Client 8" /></div>
-                <div className="swiper-slide"><img src="/Partners/9.png" className="img-fluid" alt="Client 3" /></div>
-                <div className="swiper-slide"><img src="/Partners/10.png" className="img-fluid" alt="Client 4" /></div>
-                <div className="swiper-slide"><img src="/Partners/11.png" className="img-fluid" alt="Client 5" /></div>
-                <div className="swiper-slide"><img src="/Partners/12.png" className="img-fluid" alt="Client 6" /></div>
-                <div className="swiper-slide"><img src="/Partners/13.png" className="img-fluid" alt="Client 7" /></div>
-                <div className="swiper-slide"><img src="/Partners/14.png" className="img-fluid" alt="Client 8" /></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        </section>
+      <section id="clients" className="clients section">
+      <div className="container">
+      <div className="swiper-container">
+      <div className="swiper-wrapper align-items-center">
+        <Swiper
+          modules={[Autoplay]} // Enable Autoplay
+          spaceBetween={50} // Space between slides
+          slidesPerView={5} // Number of slides per view
+          autoplay={{ 
+            delay: 3000, // Slide change interval (in milliseconds)
+            disableOnInteraction: false // Continue autoplay after user interaction
+          }}
+          loop={true} // Infinite looping
+        >
+          <SwiperSlide className="swiper-slide"><img src="/Partners/1.png" className="img-fluid" alt="Client 1" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/2.png" className="img-fluid" alt="Client 2" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/3.png" className="img-fluid" alt="Client 3" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/4.png" className="img-fluid" alt="Client 4" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/5.png" className="img-fluid" alt="Client 5" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/6.png" className="img-fluid" alt="Client 6" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/7.png" className="img-fluid" alt="Client 7" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/8.png" className="img-fluid" alt="Client 8" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/9.png" className="img-fluid" alt="Client 3" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/10.png" className="img-fluid" alt="Client 4" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/11.png" className="img-fluid" alt="Client 5" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/12.png" className="img-fluid" alt="Client 6" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/13.png" className="img-fluid" alt="Client 7" /></SwiperSlide>
+          <SwiperSlide className="swiper-slide"><img src="/Partners/14.png" className="img-fluid" alt="Client 8" /></SwiperSlide>
+        </Swiper>
+        </div>
+        </div>
+      </div>
+    </section>
+
 
 
       <section id="services" className="services section">

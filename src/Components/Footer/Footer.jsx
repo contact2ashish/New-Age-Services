@@ -22,7 +22,7 @@ const Footer = () => {
           duration: 100,
           offset: -50,
         });
-      }, 500);
+      }, 100);
     } else {
       // Directly scroll if already on the correct page
       scroller.scrollTo(sectionId, {

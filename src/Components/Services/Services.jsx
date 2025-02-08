@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 
 const communicationSolutions = [
@@ -76,6 +77,9 @@ const securitysolutions = [
 const Services = () => {
   const location = useLocation();
 
+  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState("home"); // State to track the active section
+
   useEffect(() => {
       if (location.hash) {
           const element = document.getElementById(location.hash.substring(1));
@@ -84,6 +88,22 @@ const Services = () => {
           }
       }
   }, [location]);
+
+  
+  
+    // Function to Navigate and Scroll to Section
+    const navigateToSection = (sectionId, path = "/") => {
+      setActiveSection(sectionId);
+    
+      navigate("/");
+      setTimeout(() => {
+        scroller.scrollTo(sectionId, {
+          smooth: true,
+          duration: 100,
+          offset: -50,
+        });
+      }, 100);
+      };
 
   return (
     <div className="main-content"> {/* Wrapper for content */}
@@ -101,9 +121,9 @@ const Services = () => {
            <p>
              We assess current systems, recommend best practices, and align technology with business goals to enhance efficiency and performance.
            </p>
-           <Link to="/contact">
-             <button className="btn btn-primary mt-3">Contact us to learn more</button>
-           </Link>
+              <a className="btn btn-primary mt-3" onClick={() => navigateToSection("contact")} >
+              Contact Us To Know More...
+              </a>
          </div>
          </div>
 
@@ -194,9 +214,9 @@ const Services = () => {
             <p className="lead">
             This category encompasses the storage and infrastructure management services that businesses use for data and IT operations.
             </p>
-            <Link to="/contact">
-              <button className="btn btn-primary mt-3">Contact us to learn more</button>
-            </Link>
+              <a className="btn btn-primary mt-3" onClick={() => navigateToSection("contact")} >
+                Contact Us To Know More...
+              </a>
           </div>
          </div>
 
