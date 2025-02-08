@@ -109,9 +109,9 @@ const Home = () => {
                 <p>Transforming Challenges Into Tech Solutions</p>
                 <div className="d-flex">
                   <a href="#about" className="btn-get-started">Get Started</a>
-                  <a href="https://www.youtube.com" className="glightbox btn-watch-video d-flex align-items-center">
-                    {/*<i className="bi bi-play-circle"></i><span>Watch Video</span>*/}
-                  </a>
+                  {/*<a href="https://www.youtube.com" className="glightbox btn-watch-video d-flex align-items-center">
+                    <i className="bi bi-play-circle"></i><span>Watch Video</span>
+                  </a>*/}
                 </div>
               </div>
               <div className="col-lg-5 order-1 order-lg-2">
@@ -233,7 +233,7 @@ const Home = () => {
           </div>
           <div className="col-md-6 about-us-image">
             <img
-              src="https://skripsiexpress.com/wp-content/uploads/2024/09/DALL%C2%B7E-2024-09-21-10.50.22-A-wide-image-2_1-ratio-representing-the-concept-of-metode-penelitian-skripsi.-The-image-shows-a-student-analyzing-various-research-methods-on-a-la.webp"
+              src="/Introduction-about.jpg"
               alt="About Us"
               className="img-fluid rounded"
             />
@@ -260,7 +260,7 @@ const Home = () => {
           </div>
           <div className="col-md-6 about-us-image">
             <img
-              src="https://skripsiexpress.com/wp-content/uploads/2024/08/DALL%C2%B7E-2024-08-09-09.28.29-An-image-illustrating-the-concept-of-an-introduction-section-in-a-research-paper.-The-image-features-a-clean-modern-layout-with-central-elements-such.webp"
+              src="/background-about.jpg"
               alt="Introduction"
               className="img-fluid rounded"
             />
@@ -286,7 +286,7 @@ const Home = () => {
           </div>
           <div className="col-md-6 about-us-image">
             <img
-              src="https://static.vecteezy.com/system/resources/previews/003/098/732/non_2x/core-values-icon-in-robotic-hand-vector.jpg"
+              src="/core-values-icon.jpg"
               alt="Core Values"
               className="img-fluid rounded"
             />
