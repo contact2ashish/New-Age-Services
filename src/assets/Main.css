@@ -103,7 +103,7 @@ h6 {
 
 .header .branding {
   min-height: 60px;
-  padding: 10px 0;
+
 }
 
 .header .logo {
@@ -111,8 +111,10 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
-  margin-right: 8px;
+  height: 72px;
+  width: auto;
+
+  
 }
 
 .header .logo h1 {
@@ -820,9 +822,15 @@ section,
 
 .clients .swiper-wrapper {
   height: auto;
+  display: flex;  /* Enables flexbox */
+  justify-items: center;
+  align-items: center;
 }
 
 .clients .swiper-slide img {
+  display: flex;  /* Enables flexbox */
+  justify-items: center;
+  align-items: center;
   transition: 0.3s;
 }
 
