@@ -3,6 +3,7 @@ import { useEffect , useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import { scroller } from "react-scroll";
+import Modal from "./Modal";
 
 
 const communicationSolutions = [
@@ -74,7 +75,86 @@ const securitysolutions = [
   }
 ];
 
+// Separate Modal Details for Each Solution
+
+const modalDetails = {
+  "PRI": {
+    extraInfo: "PRI (Primary Rate Interface) provides dedicated voice channels for businesses. It enables seamless and high-quality voice communication over ISDN lines.",
+    features: ["Up to 30 voice channels per connection", "Clear, reliable call quality", "Supports both incoming and outgoing calls"],
+    useCases: ["Call centers", "Enterprises with high call volume", "Banks and financial services"],
+    benefits: ["High call capacity", "Improved voice clarity", "Secure and reliable communication"]
+  },
+  "SIP Trunk": {
+    extraInfo: "SIP Trunking replaces traditional telephone lines using the internet, reducing costs while improving flexibility and scalability.",
+    features: ["Scalable VoIP-based communication", "Seamless integration with PBX systems", "Cost-effective international calling"],
+    useCases: ["Remote teams", "Multi-location businesses", "Cost-conscious enterprises"],
+    benefits: ["Reduced telephony costs", "Flexible call routing", "Supports remote and hybrid workforces"]
+  },
+  "Toll-Free": {
+    extraInfo: "Toll-free numbers allow customers to reach businesses without incurring call charges, enhancing accessibility and service quality.",
+    features: ["Nationwide accessibility", "Easy-to-remember numbers", "Supports IVR and call forwarding"],
+    useCases: ["Customer support centers", "Helplines and emergency services", "E-commerce businesses"],
+    benefits: ["Better customer engagement", "Enhanced brand credibility", "Increased lead generation"]
+  },
+  "Video Conferencing": {
+    extraInfo: "Video conferencing tools provide HD video and audio solutions for virtual meetings, enabling real-time collaboration.",
+    features: ["HD video and audio clarity", "Screen sharing and chat options", "Multi-device compatibility"],
+    useCases: ["Remote work", "Client meetings", "Online training and webinars"],
+    benefits: ["Reduced travel costs", "Improved team collaboration", "Enhanced communication efficiency"]
+  },
+  "Broadband": {
+    extraInfo: "Broadband provides high-speed internet connectivity with flexible plans tailored for businesses of all sizes.",
+    features: ["High-speed data transmission", "Various bandwidth options", "Reliable and stable connection"],
+    useCases: ["Small and medium businesses", "Retail outlets and offices", "Remote work setups"],
+    benefits: ["Affordable and flexible plans", "Quick deployment and easy setup", "Consistent and uninterrupted connectivity"]
+  },
+  "Internet Leased Line": {
+    extraInfo: "A dedicated internet connection that ensures stable and high-speed network performance for business-critical applications.",
+    features: ["Dedicated bandwidth", "Symmetrical upload/download speeds", "24/7 monitoring and support"],
+    useCases: ["Large enterprises requiring constant uptime", "Data centers and cloud applications", "Businesses with high data transfer needs"],
+    benefits: ["Uninterrupted, reliable connectivity", "Secure and private data transmission", "Improved business efficiency"]
+  },
+  "MPLS": {
+    extraInfo: "MPLS is a secure, high-performance networking solution designed for businesses with multiple locations.",
+    features: ["Fast and secure data transfer", "Low latency and packet loss", "Prioritized traffic for critical applications"],
+    useCases: ["Multi-branch companies", "Financial institutions", "Healthcare networks"],
+    benefits: ["Improved network efficiency", "Seamless site-to-site connectivity", "Reduced downtime and better security"]
+  },
+  "SD-WAN": {
+    extraInfo: "SD-WAN optimizes network performance using intelligent routing to enhance business connectivity.",
+    features: ["Centralized network control", "Real-time traffic optimization", "Secure connectivity across multiple locations"],
+    useCases: ["Enterprises with remote branches", "Cloud-based businesses", "IT-driven industries"],
+    benefits: ["Cost-effective compared to MPLS", "Better application performance", "Enhanced security and scalability"]
+  },
+  "Antivirus Solutions": {
+    extraInfo: "Comprehensive cybersecurity software to safeguard devices from viruses, malware, and cyber threats.",
+    features: ["Real-time threat detection", "Automatic updates for latest threats", "Multi-device protection"],
+    useCases: ["Businesses handling sensitive data", "Individuals needing robust cybersecurity", "IT environments requiring endpoint security"],
+    benefits: ["Prevents cyberattacks and data breaches", "Enhances system performance and stability", "Protects business continuity"]
+  },
+  "Firewall": {
+    extraInfo: "A security system that monitors and controls incoming and outgoing network traffic based on predefined security rules.",
+    features: ["Intrusion prevention system (IPS)", "Deep packet inspection", "VPN support for secure remote access"],
+    useCases: ["Enterprises requiring secure network access", "Data centers and cloud environments", "Financial and government institutions"],
+    benefits: ["Strong defense against cyber threats", "Secure and controlled data access", "Reduces risk of unauthorized access"]
+  },
+  "Surveillance": {
+    extraInfo: "A security solution that integrates CCTV and advanced monitoring systems to protect businesses and properties.",
+    features: ["High-resolution video recording", "Motion detection and alerts", "Cloud storage and remote access"],
+    useCases: ["Retail stores and shopping malls", "Office spaces and warehouses", "Smart homes and gated communities"],
+    benefits: ["Enhanced security and monitoring", "Deters theft and unauthorized access", "Remote access for real-time surveillance"]
+  },
+  "Biometrics": {
+    extraInfo: "Advanced biometric security systems using fingerprints, facial recognition, and iris scanning for secure authentication.",
+    features: ["Contactless and secure authentication", "Fast and accurate identification", "Integration with access control systems"],
+    useCases: ["Corporate offices and government agencies", "High-security zones and research facilities", "Time and attendance tracking systems"],
+    benefits: ["Eliminates unauthorized access", "Reduces identity fraud risks", "Enhances overall security efficiency"]
+  }
+};
+
 const Services = () => {
+  const [open, setOpen] =  useState(false);
+  const [selectedSolution, setSelectedSolution] = useState(null);
   const location = useLocation();
 
   const navigate = useNavigate();
@@ -105,6 +185,16 @@ const Services = () => {
       }, 100);
       };
 
+      const handleOpen = (solution) => {
+        setSelectedSolution(solution);
+        setOpen(true);
+      };
+    
+      const handleClose = () => {
+        setSelectedSolution(null);
+        setOpen(false);
+      };
+
   return (
     <div className="main-content"> {/* Wrapper for content */}
     <section id = "ITConsulting">
@@ -121,9 +211,9 @@ const Services = () => {
            <p>
              We assess current systems, recommend best practices, and align technology with business goals to enhance efficiency and performance.
            </p>
-              <a className="btn btn-primary mt-3" onClick={() => navigateToSection("contact")} >
+              <button className="button" onClick={() => navigateToSection("contact")} >
               Contact Us To Know More...
-              </a>
+              </button>
          </div>
          </div>
 
@@ -147,11 +237,50 @@ const Services = () => {
                   />
                   <h2>{solution.title}</h2>
                   <p>{solution.description}</p>
+                  <button className="button" type="button" onClick={() => handleOpen(solution)} >
+                   Know More...
+                  </button>
                 </div>
               </div>
             ))}
+            
           </div>
+          {/* Modal */}
+        {selectedSolution && (
+        <Modal isOpen={open} onClose={handleClose}>
+          <div className="modal-content">
+            <h2>{selectedSolution.title}</h2>
+            <img
+              src={selectedSolution.image}
+              alt={selectedSolution.title}
+            />
+            <p>{modalDetails[selectedSolution.title].extraInfo}</p>
+            
+            <h6>Key Features:</h6>
+            <ul>
+              {modalDetails[selectedSolution.title].features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+
+            <h6>Common Use Cases:</h6>
+            <ul>
+              {modalDetails[selectedSolution.title].useCases.map((useCase, index) => (
+                <li key={index}>{useCase}</li>
+              ))}
+            </ul>
+
+            <h6>Benefits:</h6>
+            <ul>
+              {modalDetails[selectedSolution.title].benefits.map((benefit, index) => (
+                <li key={index}>{benefit}</li>
+              ))}
+            </ul>
+          </div>
+        </Modal>
+      )}
         </div>
+        
       </section>
 
       <section id = "ConnectivitySolutions">
@@ -172,10 +301,47 @@ const Services = () => {
                   />
                   <h2>{solution.title}</h2>
                   <p>{solution.description}</p>
+                  <button className="button" type="button" onClick={() => handleOpen(solution)} >
+                   Know More...
+                  </button>
                 </div>
               </div>
             ))}
           </div>
+          {/* Modal */}
+        {selectedSolution && (
+        <Modal isOpen={open} onClose={handleClose}>
+          <div className="modal-content">
+            <h2>{selectedSolution.title}</h2>
+            <img
+              src={selectedSolution.image}
+              alt={selectedSolution.title}
+            />
+            <p>{modalDetails[selectedSolution.title].extraInfo}</p>
+            
+            <h6>Key Features:</h6>
+            <ul>
+              {modalDetails[selectedSolution.title].features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+
+            <h6>Common Use Cases:</h6>
+            <ul>
+              {modalDetails[selectedSolution.title].useCases.map((useCase, index) => (
+                <li key={index}>{useCase}</li>
+              ))}
+            </ul>
+
+            <h6>Benefits:</h6>
+            <ul>
+              {modalDetails[selectedSolution.title].benefits.map((benefit, index) => (
+                <li key={index}>{benefit}</li>
+              ))}
+            </ul>
+          </div>
+        </Modal>
+      )}
         </div>
       </section>
 
@@ -197,10 +363,47 @@ const Services = () => {
                   />
                   <h2>{solution.title}</h2>
                   <p>{solution.description}</p>
+                  <button className="button" type="button" onClick={() => handleOpen(solution)} >
+                   Know More...
+                  </button>
                 </div>
               </div>
             ))}
           </div>
+          {/* Modal */}
+        {selectedSolution && (
+        <Modal isOpen={open} onClose={handleClose}>
+          <div className="modal-content">
+            <h2>{selectedSolution.title}</h2>
+            <img
+              src={selectedSolution.image}
+              alt={selectedSolution.title}
+            />
+            <p>{modalDetails[selectedSolution.title].extraInfo}</p>
+            
+            <h6>Key Features:</h6>
+            <ul>
+              {modalDetails[selectedSolution.title].features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+
+            <h6>Common Use Cases:</h6>
+            <ul>
+              {modalDetails[selectedSolution.title].useCases.map((useCase, index) => (
+                <li key={index}>{useCase}</li>
+              ))}
+            </ul>
+
+            <h6>Benefits:</h6>
+            <ul>
+              {modalDetails[selectedSolution.title].benefits.map((benefit, index) => (
+                <li key={index}>{benefit}</li>
+              ))}
+            </ul>
+          </div>
+        </Modal>
+      )}
         </div>
       </section>
       <section id = "DataStorage">
@@ -214,9 +417,9 @@ const Services = () => {
             <p className="lead">
             This category encompasses the storage and infrastructure management services that businesses use for data and IT operations.
             </p>
-              <a className="btn btn-primary mt-3" onClick={() => navigateToSection("contact")} >
-                Contact Us To Know More...
-              </a>
+            <button className="button" onClick={() => navigateToSection("contact")} >
+              Contact Us To Know More...
+              </button>
           </div>
          </div>
 

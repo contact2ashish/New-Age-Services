@@ -9,15 +9,16 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
 
+  const [loading, setLoading] = useState(false);
+
+
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    location: '',
-    date: '',
-    subject: '',
-    details: '',
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+    subject: "",
+    message: ""
   });
 
   const [popup, setPopup] = useState({ isVisible: false, message: '' });
@@ -32,6 +33,7 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     emailjs
       .send(
@@ -57,16 +59,15 @@ const Home = () => {
   };
 
   const closePopup = () => {
+    setLoading(false);
     setPopup({ isVisible: false, message: '' });
     setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      location: '',
-      date: '',
-      subject: '',
-      details: '',
+      name: "",
+      email: "",
+      phone: "",
+      location: "",
+      subject: "",
+      message: ""
     });
   };
 
@@ -244,7 +245,7 @@ const Home = () => {
       <section className="about-us-container container text-center py-5">
         <div className="row align-items-center">
           <div className="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <h1>Core Values</h1>
+            <h3>Core Values</h3>
             <ul className="list-unstyled text-start">
               <li><strong>Customer-Centric Approach:</strong> We prioritize our clients' needs, tailoring solutions to meet their unique challenges.</li>
               <li><strong>Integrity:</strong> We maintain transparency and honesty in all our dealings, fostering trust and reliability.</li>
@@ -318,7 +319,7 @@ const Home = () => {
             <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div className="service-item  position-relative">
                 <div className="icon">
-                  <i className="bi bi-activity"></i>
+                  <i className="bi bi-pc-display"></i>
                 </div>
                 <h3>IT Consulting</h3>
                 <p>Our IT consulting services help businesses identify areas for improvement and develop strategic technology plans. We assess current systems, recommend best practices, and align technology with business goals to enhance efficiency and performance.</p>
@@ -329,7 +330,7 @@ const Home = () => {
             <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
               <div className="service-item position-relative">
                 <div className="icon">
-                  <i className="bi bi-broadcast"></i>
+                  <i className="bi bi-broadcast-pin"></i>
                 </div>
                 <h3>Connectivity Solutions</h3>
                 <p>Includes services that help businesses connect to the internet and optimize their networks:</p>
@@ -340,7 +341,7 @@ const Home = () => {
             <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
               <div className="service-item position-relative">
                 <div className="icon">
-                  <i className="bi bi-easel"></i>
+                  <i className="bi bi-telephone"></i>
                 </div>
                 <h3>Communication Solutions</h3>
                 <p>This includes services focused on voice communication, telephony, and conferencing:</p>
@@ -351,7 +352,7 @@ const Home = () => {
             <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
               <div className="service-item position-relative">
                 <div className="icon">
-                  <i className="bi bi-bounding-box-circles"></i>
+                  <i className="bi bi-shield-check"></i>
                 </div>
                 <h3>Security Solutions</h3>
                 <p>The security services are designed to protect your business from evolving cyber threats.</p>
@@ -362,7 +363,7 @@ const Home = () => {
             <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
               <div className="service-item position-relative">
                 <div className="icon">
-                  <i className="bi bi-calendar4-week"></i>
+                  <i className="bi bi-database-check"></i>
                 </div>
                 <h3>Data Storage and Infrastructure</h3>
                 <p>This category encompasses the storage and infrastructure management services that businesses use for data and IT operations:</p>
@@ -412,7 +413,7 @@ const Home = () => {
                     <i className="bi bi-envelope flex-shrink-0"></i>
                     <div>
                       <h3>Email Us</h3>
-                      <p>info@example.com</p>
+                      <p>newageservices.in@gmail.com</p>
                     </div>
                   </div>
     
@@ -455,7 +456,18 @@ const Home = () => {
                     </div>
     
                     <div className="col-md-12 text-center">  
-                      <button type="submit">Send Message</button>
+                    <button type="submit" disabled={loading} className="submit-btn">
+                      {loading ? (
+                        <div className="load">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                      ) : (
+                        "Send Message"
+                      )}
+                    </button>
                     </div>
     
                   </div>

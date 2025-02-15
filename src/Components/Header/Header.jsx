@@ -15,7 +15,42 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 function Header() {
   const mobileNavBtnRef = useRef(null);
   const navigate = useNavigate();
-  const [activeSection, setActiveSection] = useState("home"); // State to track the active section
+  const [activeSection, setActiveSection] = useState("home");
+
+  // Mobile Navigation Toggle
+  useEffect(() => {
+    const mobileNavBtn = mobileNavBtnRef.current;
+    const navLinks = document.querySelectorAll(".navmenu a");
+
+    if (!mobileNavBtn) return;
+
+    const mobileNavToggle = () => {
+      document.body.classList.toggle("mobile-nav-active");
+      mobileNavBtn.classList.toggle("bi-list");
+      mobileNavBtn.classList.toggle("bi-x");
+    };
+
+    const closeMobileNav = () => {
+      document.body.classList.remove("mobile-nav-active");
+      mobileNavBtn.classList.add("bi-list");
+      mobileNavBtn.classList.remove("bi-x");
+    };
+
+    mobileNavBtn.addEventListener("click", mobileNavToggle);
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMobileNav(); // Close menu when clicking a nav item
+      });
+    });
+
+    return () => {
+      mobileNavBtn.removeEventListener("click", mobileNavToggle);
+      navLinks.forEach((link) => {
+        link.removeEventListener("click", closeMobileNav);
+      });
+    };
+  }, []);
 
   useEffect(() => {
     console.log("Header component mounted");
@@ -26,18 +61,6 @@ function Header() {
     };
     document.addEventListener("scroll", toggleScrolled);
     window.addEventListener("load", toggleScrolled);
-
-    // Mobile Navigation Toggle
-    const mobileNavBtn = mobileNavBtnRef.current;
-    const mobileNavToggle = () => {
-      document.body.classList.toggle("mobile-nav-active");
-      mobileNavBtn.classList.toggle("bi-list");
-      mobileNavBtn.classList.toggle("bi-x");
-    };
-
-    if (mobileNavBtn) {
-      mobileNavBtn.addEventListener("click", mobileNavToggle);
-    }
 
     // Scroll to top functionality
     let scrollTop = document.querySelector(".scroll-top");
@@ -71,7 +94,6 @@ function Header() {
 
     // Initialize GLightbox
     GLightbox({ selector: ".glightbox" });
-
 
     // Initialize Isotope
     document.querySelectorAll(".isotope-layout").forEach((isotopeItem) => {
@@ -139,15 +161,12 @@ function Header() {
       document.removeEventListener("scroll", toggleScrolled);
       document.removeEventListener("scroll", navmenuScrollspy);
       document.removeEventListener("scroll", toggleScrollTop);
-      if (mobileNavBtn) {
-        mobileNavBtn.removeEventListener("click", mobileNavToggle);
-      }
     };
   }, []);
 
   // Function to Navigate and Scroll to Section
   const navigateToSection = (section) => {
-    setActiveSection(section); // Update active section state
+    setActiveSection(section);
     navigate("/");
     setTimeout(() => {
       scroller.scrollTo(section, {
@@ -164,7 +183,6 @@ function Header() {
         <div className="container position-relative d-flex align-items-center justify-content-between">
           <a onClick={() => navigateToSection("hero")} className="logo d-flex align-items-center">
             <img src="\MAIN LOGO.jpg" alt="main-logo" />
-
           </a>
 
           <nav id="navmenu" className="navmenu">

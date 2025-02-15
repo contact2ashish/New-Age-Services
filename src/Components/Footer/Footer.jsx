@@ -55,70 +55,84 @@ const Footer = () => {
 
     return (
       <>
-         <footer id="footer" class="footer accent-background">
+         <footer id="footer" className="footer accent-background">
   
-         <div class="container footer-top">
-         <div class="row gy-4">
-         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-          <span class="sitename">New Age Services.</span>
-          </a>
-         <p>Transforming Challenges Into Tech Solutions</p>
-        <div class="social-links d-flex mt-4">
-          <a href=""><i class="bi bi-twitter-x"></i></a>
-          <a href=""><i class="bi bi-facebook"></i></a>
-          <a href=""><i class="bi bi-instagram"></i></a>
-          <a href=""><i class="bi bi-linkedin"></i></a>
+      <div className="container footer-top">
+        <div className="row gy-4">
+          
+          {/* Footer About Section */}
+          <div className="col-lg-5 col-md-12 footer-about">
+            <div className="logo d-flex align-items-center">
+              <strong className="sitename-footer">New Age Services</strong>
+            </div>
+            <p>Transforming Challenges Into Tech Solutions</p>
+            <div className="social-links d-flex mt-4">
+              <a href="#"><i className="bi bi-twitter-x"></i></a>
+              <a href="#"><i className="bi bi-facebook"></i></a>
+              <a href="#"><i className="bi bi-instagram"></i></a>
+              <a href="#"><i className="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          {/* Useful Links Section */}
+          <div className="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              {["home", "about", "services", "contact"].map((section) => (
+                <li key={section}>
+                  <a
+                    onClick={() => navigateToSection(section)}
+                    className={activeSection === section ? "active" : ""}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  onClick={() =>
+                    navigateToSection("TermsConditions", "/Terms&Conditions/Terms&Conditions")
+                  }
+                  className={activeSection === "TermsConditions" ? "active" : ""}
+                >
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => navigateToSection("PrivacyPolicy", "/privacy")}
+                  className={activeSection === "PrivacyPolicy" ? "active" : ""}
+                >
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Section */}
+          <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact Us</h4>
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p>United States</p>
+            <p className="mt-4">
+              <strong>Phone:</strong> <span>+1 5589 55488 55</span>
+            </p>
+            <p>
+              <strong>Email:</strong> <span>newageservices.in@gmail.com</span>
+            </p>
+          </div>
         </div>
       </div>
-  
-      <div class="col-lg-2 col-6 footer-links">
-        <h4>Useful Links</h4>
-        <ul>
-            <li>
-                <a onClick={() => navigateToSection("home")} className={activeSection === "home" ? "active" : ""}>Home</a>
-            </li>
-            <li>
-                <a onClick={() => navigateToSection("about")} className={activeSection === "about" ? "active" : ""}>About</a>
-            </li>
-            <li>
-                <a onClick={() => navigateToSection("services")} className={activeSection === "services" ? "active" : ""}>Services</a>
-            </li>
-            <li>
-                <a onClick={() => navigateToSection("contact")} className={activeSection === "contact" ? "active" : ""}>Contact</a>
-            </li>
-            <li>
-              <a onClick={() => navigateToSection("TermsConditions", "/Terms&Conditions/Terms&Conditions")} 
-                 className={activeSection === "TermsConditions" ? "active" : ""}>
-                Terms & Conditions
-              </a>
-            </li>
-            
-            <li>
-              <a onClick={() => navigateToSection("PrivacyPolicy", "/privacy")} 
-                 className={activeSection === "PrivacyPolicy" ? "active" : ""}>
-                Privacy Policy
-              </a>
-            </li>
-            
-        </ul>
+
+      {/* Copyright Section */}
+      <div className="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong className="px-1 sitename">New Age Services</strong>
+          <span> All Rights Reserved</span>
+        </p>
       </div>
-  
-      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-        <h4>Contact Us</h4>
-        <p>A108 Adam Street</p>
-        <p>New York, NY 535022</p>
-        <p>United States</p>
-        <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-        <p><strong>Email:</strong> <span>info@example.com</span></p>
-      </div>
-  
-    </div>
-         </div>
-  
-          <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">New Age Services</strong> <span>All Rights Reserved</span></p>
-          </div>
         
         </footer>
       </>
