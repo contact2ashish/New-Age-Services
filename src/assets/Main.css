@@ -365,136 +365,133 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+
 .footer {
-  color: var(--default-color);
   background-color: var(--background-color);
+  color: var(--default-color);
+  padding: 40px 20px;
   font-size: 14px;
-  position: relative;
-  height: 410px;
-  z-index: 1;
 }
 
-.footer .footer-top {
-  padding-top: 50px;
+.footer-top {
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-.footer .footer-about .logo {
-  line-height: 1;
-  margin-bottom: 25px;
+.footer-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.footer .footer-about .logo img {
-  max-height: 40px;
-  margin-right: 6px;
+@media (min-width: 992px) {
+  .footer-left {
+    flex-direction: row;
+  }
 }
 
-.footer .footer-about .logo span {
-  color: var(--heading-color);
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-family: var(--heading-font);
-}
-
-.footer .footer-about p {
-  font-size: 14px;
-  font-family: var(--heading-font);
-}
-
-.footer .social-links a {
+/* About */
+.footer-about .logo {
   display: flex;
   align-items: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  margin-top: 8px;
+}
+
+.social-links a {
+  display: flex;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  align-items: center;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
   color: color-mix(in srgb, var(--default-color), transparent 50%);
   margin-right: 10px;
   transition: 0.3s;
-  
 }
 
-.footer .social-links a:hover {
+.social-links a:hover {
   color: #0E47E0;
   border-color: #0E47E0;
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
-.footer h4 {
+/* Links */
+.footer-links h4 {
   font-size: 16px;
   font-weight: bold;
-  position: relative;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
 }
 
-.footer .footer-links {
-  margin-bottom: 30px;
-}
-
-.footer .footer-links ul {
+.footer-links ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-  cursor: pointer;
 }
 
-.footer .footer-links ul i {
-  padding-right: 2px;
-  font-size: 12px;
-  line-height: 0;
+.footer-links ul li {
+  margin-bottom: 8px;
 }
 
-.footer .footer-links ul li {
-  padding: 10px 0;
+.footer-links ul a {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer-links ul a:hover {
+  color: #0E47E0;
+  transform: scale(1.05);
+}
+
+/* Contact Text */
+.footer-contact-text h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-contact-text p {
+  margin: 4px 0;
+}
+
+/* Map */
+.footer-map {
+  flex: 1;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.footer .footer-links ul li:first-child {
-  padding-top: 0;
+.map-image {
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid #0E47E0;
+  border-radius: 1px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  display: inline-block;
-  line-height: 1;
-}
-
-.footer .footer-links ul a:hover {
-  color: #0E47E0;
-  transform: scale(1.1)
-}
-
-.footer .footer-contact p {
-  margin-bottom: 5px;
-}
-
+/* Copyright */
 .footer .copyright {
   padding-top: 30px;
   padding-bottom: 30px;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .copyright p {
-  margin-bottom: 0;
-}
-
-.footer .credits {
-  margin-top: 4px;
   font-size: 13px;
+  color: var(--default-color);
 }
 
+.footer .sitename-footer,
 .footer .sitename {
   color: #0E47E0;
-} 
-.footer .sitename-footer{
-  color: #0E47E0;
-  font-weight: 500;
-  font-size: 30px;
-} 
-
+  font-weight: 600;
+}
 
 
 
@@ -1466,12 +1463,13 @@ section {
 
 .it-consulting-container {
   position: relative;
-  background: url('D:\PRATHAM\PrathamAPP1\New Age Services\public\ITConsultancy.jpg') no-repeat center center/cover;
+  background: url('./ITConsultancy.jpg') no-repeat center center/cover;
   height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 .box-container{
   background-color: rgba(0, 0, 0, 0); /* Black background with 50% transparency */
@@ -1488,12 +1486,13 @@ section {
 
 .Data-Storage-container {
   position: relative;
-  background: url('D:\PRATHAM\PrathamAPP1\New Age Services\public\Data Infrastructure.jpg') no-repeat center center/cover;
+  background: url('./DataInfrastructure.jpg') no-repeat center center/cover;
   height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 .background-image::before {
   content: "";
@@ -1606,6 +1605,50 @@ section {
   color: #0E47E0;
   font-weight: 500;
 } 
+
+.PrivacyPolicy .container {
+  max-width: 1000px;
+}
+
+.PrivacyPolicy .card {
+  border-radius: 10px;
+  border: none;
+  background-color: #ffffff;
+  color: #1e3a5f;
+  padding: 20px;
+}
+
+.PrivacyPolicy h2 {
+  color: #1e3a5f;
+  font-weight: bold;
+  text-align: center;
+}
+
+.PrivacyPolicy h5 {
+  color: #0056b3;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.PrivacyPolicy p, .PrivacyPolicy li {
+  color: #003366;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.PrivacyPolicy ul {
+  padding-left: 20px;
+}
+
+.PrivacyPolicy li {
+  margin-bottom: 8px;
+}
+
+.PrivacyPolicy .card:hover {
+  background-color: #f0f8ff;
+  transition: background-color 0.3s ease-in-out;
+}
+
 
 
 

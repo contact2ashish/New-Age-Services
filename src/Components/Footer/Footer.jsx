@@ -54,88 +54,98 @@ const Footer = () => {
     }, []);
 
     return (
-      <>
-         <footer id="footer" className="footer accent-background">
-  
-      <div className="container footer-top">
-        <div className="row gy-4">
-          
-          {/* Footer About Section */}
-          <div className="col-lg-5 col-md-12 footer-about">
-            <div className="logo d-flex align-items-center">
-              <strong className="sitename-footer">New Age Services</strong>
-            </div>
-            <p>Transforming Challenges Into Tech Solutions</p>
-            <div className="social-links d-flex mt-4">
-              <a href="#"><i className="bi bi-twitter-x"></i></a>
-              <a href="#"><i className="bi bi-facebook"></i></a>
-              <a href="#"><i className="bi bi-instagram"></i></a>
-              <a href="#"><i className="bi bi-linkedin"></i></a>
-            </div>
+<>
+  <footer id="footer" className="footer accent-background">
+    <div className="container footer-top d-flex flex-column flex-lg-row justify-content-between align-items-start gap-4">
+      
+      {/* Left Side: About + Links + Contact Text */}
+      <div className="footer-left d-flex flex-column flex-md-row gap-5 flex-grow-1 w-100">
+        
+        {/* About */}
+        <div className="footer-about">
+          <div className="logo d-flex align-items-center">
+            <strong className="sitename-footer">New Age Services</strong>
           </div>
+          <p>Transforming Challenges Into Tech Solutions</p>
+          <div className="social-links d-flex mt-4">
+            <a href="#"><i className="bi bi-twitter-x"></i></a>
+            <a href="#"><i className="bi bi-facebook"></i></a>
+            <a href="#"><i className="bi bi-instagram"></i></a>
+            <a href="#"><i className="bi bi-linkedin"></i></a>
+          </div>
+        </div>
 
-          {/* Useful Links Section */}
-          <div className="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              {["home", "about", "services", "contact"].map((section) => (
-                <li key={section}>
-                  <a
-                    onClick={() => navigateToSection(section)}
-                    className={activeSection === section ? "active" : ""}
-                  >
-                    {section.charAt(0).toUpperCase() + section.slice(1)}
-                  </a>
-                </li>
-              ))}
-              <li>
+        {/* Links */}
+        <div className="footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            {["home", "about", "services", "contact"].map((section) => (
+              <li key={section}>
                 <a
-                  onClick={() =>
-                    navigateToSection("TermsConditions", "/Terms&Conditions/Terms&Conditions")
-                  }
-                  className={activeSection === "TermsConditions" ? "active" : ""}
+                  onClick={() => navigateToSection(section)}
+                  className={activeSection === section ? "active" : ""}
                 >
-                  Terms & Conditions
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
                 </a>
               </li>
-              <li>
-                <a
-                  onClick={() => navigateToSection("PrivacyPolicy", "/privacy")}
-                  className={activeSection === "PrivacyPolicy" ? "active" : ""}
-                >
-                  Privacy Policy
-                </a>
-              </li>
-            </ul>
-          </div>
+            ))}
+            <li>
+              <a
+                onClick={() =>
+                  navigateToSection("TermsConditions", "/Terms&Conditions/Terms&Conditions")
+                }
+                className={activeSection === "TermsConditions" ? "active" : ""}
+              >
+                Terms & Conditions
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => navigateToSection("PrivacyPolicy", "/Privacy&Policy/Privacy&Policy")}
+                className={activeSection === "PrivacyPolicy" ? "active" : ""}
+              >
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </div>
 
-          {/* Contact Section */}
-          <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p>United States</p>
-            <p className="mt-4">
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span>
-            </p>
-            <p>
-              <strong>Email:</strong> <span>newageservices.in@gmail.com</span>
-            </p>
-          </div>
+        {/* Contact Text */}
+        <div className="footer-contact-text">
+          <h4>Contact Us</h4>
+          <p>EKTA Tower</p>
+          <p>Block 7A/3, Dakshin Gangotri Supela Bhilai</p>
+          <p>Chhattisgarh - 490023</p>
+          <p className="mt-3">
+            <strong>Phone:</strong> <span>+91 9039096776</span>
+          </p>
+          <p>
+            <strong>Email:</strong> <span>newageservices.in@gmail.com</span>
+          </p>
         </div>
       </div>
 
-      {/* Copyright Section */}
-      <div className="container copyright text-center mt-4">
-        <p>
-          © <span>Copyright</span>
-          <strong className="px-1 sitename">New Age Services</strong>
-          <span> All Rights Reserved</span>
-        </p>
+      {/* Right Side: Map */}
+      <div className="footer-map">
+        <img
+          src="/India office map.jpg"
+          alt="Office Map"
+          className="map-image"
+        />
       </div>
-        
-        </footer>
-      </>
+    </div>
+
+    {/* Copyright */}
+    <div className="container copyright text-center mt-4">
+      <p>
+        © <span>Copyright</span>
+        <strong className="px-1 sitename">New Age Services</strong>
+        <span> All Rights Reserved</span>
+      </p>
+    </div>
+  </footer>
+</>
+
   
     ) 
 

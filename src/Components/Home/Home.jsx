@@ -270,15 +270,20 @@ const Home = () => {
       
 
       <section id="clients" className="clients section">
-      <div className="container">
+
       <div className="swiper-container">
+      <div className="container section-title" data-aos="fade-up">
+      <h2>Our Partners</h2>
+      </div>
+      <div className="container">
       <div className="swiper-wrapper align-items-center">
+      
         <Swiper
           modules={[Autoplay]} // Enable Autoplay
           spaceBetween={50} // Space between slides
           slidesPerView={5} // Number of slides per view
           autoplay={{ 
-            delay: 3000, // Slide change interval (in milliseconds)
+            delay: 2000, // Slide change interval (in milliseconds)
             disableOnInteraction: false // Continue autoplay after user interaction
           }}
           loop={true} // Infinite looping

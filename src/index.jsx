@@ -8,6 +8,7 @@ import Layout from './Components/Layout/Layout.jsx';
 import Home from './Components/Home/Home.jsx';
 import Services from './Components/Services/Services';
 import TermsAndConditions from './Components/Terms&Conditions/Terms&Conditions';
+import PrivacyPolicy from './Components/Privacy&Policy/Privacy&Policy';
 
 
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/Services/Services" element={<Services />}/>
       <Route path="/Terms&Conditions/Terms&Conditions" element={<TermsAndConditions />}/>
+      <Route path="/Privacy&Policy/Privacy&Policy" element={<PrivacyPolicy />}/>
     </Route>
   )
 );

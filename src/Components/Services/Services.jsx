@@ -10,12 +10,12 @@ const communicationSolutions = [
   {
     title: "PRI",
     description: "A robust telephony solution designed to handle large volumes of incoming and outgoing calls.",
-    image: "https://5.imimg.com/data5/SELLER/Default/2023/7/328731966/HM/PU/LC/104504330/pri-lines-service-500x500.jpg"
+    image: "/PRI.jpg"
   },
   {
     title: "SIP Trunk",
     description: "VoIP-based phone services that replace traditional telephony lines, offering cost-efficiency and flexibility.",
-    image: "https://gardoon.io/wp-content/uploads/2020/06/icon-sip-e1592574266102.png"
+    image: "/SIP Trunk.png"
   },
   {
     title: "Toll-Free",
@@ -38,17 +38,17 @@ const solutions = [
   {
     title: "Internet Leased Line",
     description: "A dedicated, high-speed internet connection that offers reliable and consistent performance.",
-    image: "https://i.pinimg.com/736x/ad/35/86/ad35869bcc7afda9836e3335cb766886.jpg"
+    image: "/Internet Leased Line.jpg"
   },
   {
     title: "MPLS",
     description: "Secure and efficient data transfer across multiple locations, ensuring optimal network performance.",
-    image: "https://global.discourse-cdn.com/spiceworks/original/4X/d/3/7/d373e81b22eb61ad42a8603739da5634c6beaf78.jpeg"
+    image: "/MPLS.jpg"
   },
   {
     title: "SD-WAN",
     description: "A software-based solution that optimizes wide-area network performance through intelligent routing.",
-    image: "https://blog.consoleconnect.com/hubfs/MPLS%20SDWAN.png"
+    image: "/SD-WAN.jpg"
   }
 ];
 
