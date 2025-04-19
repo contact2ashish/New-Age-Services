@@ -1493,6 +1493,15 @@ section {
   justify-content: center;
 }
 
+.Cyber-Security {
+  position: relative;
+  background: url('./Cyber Security.jpg') no-repeat center center/cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .background-image::before {
   content: "";

@@ -375,6 +375,17 @@ const Home = () => {
                 <Link to="/Services/Services#DataStorage" className="readmore stretched-link">Read more <i className="bi bi-arrow-right"></i></Link>
               </div>
             </div>
+
+            <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+              <div className="service-item position-relative">
+                <div className="icon">
+                  <i className="bi bi-shield-lock"></i>
+                </div>
+                <h3>Cyber Security</h3>
+                <p>Protecting Your Data, 24/7 Advanced threat detection and prevention to keep your systems secure.We safeguard your digital world so you can focus on what matters.</p>
+                <Link to="/Services/Services#CyberSecurity" className="readmore stretched-link">Read more <i className="bi bi-arrow-right"></i></Link>
+              </div>
+            </div>
   
 
   

@@ -422,9 +422,26 @@ const Services = () => {
               </button>
           </div>
          </div>
-
       </div>
 </section>
+    <section id = "CyberSecurity">
+          <div className="container-fluid Cyber-Security position-relative text-white">
+             <div className="background-image position-absolute w-100 h-100">
+               <div className="overlay position-absolute w-100 h-100"></div>
+             </div>
+             <div className="box-container">
+              <div className="container position-relative text-center py-5">
+                <h1 className="fw-bold">Cyber Security</h1>
+                <p className="lead">
+                Protecting Your Data, 24/7 Advanced threat detection and prevention to keep your systems secure.We safeguard your digital world so you can focus on what matters.
+                </p>
+                <button className="button" onClick={() => navigateToSection("contact")} >
+                  Contact Us To Know More...
+                  </button>
+              </div>
+             </div>
+          </div>
+    </section>
     </div>
 
   );
