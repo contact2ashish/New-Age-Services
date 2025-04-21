@@ -413,7 +413,9 @@ const Home = () => {
                     <i className="bi bi-geo-alt flex-shrink-0"></i>
                     <div>
                       <h3>Address</h3>
-                      <p>A108 Adam Street, New York, NY 535022</p>
+                      <p>EKTA Tower</p>
+                      <p>Block 7A/3, Dakshin Gangotri Supela Bhilai - 490023</p>
+                      <p>Chhattisgarh, India</p>
                     </div>
                   </div>
     
@@ -421,7 +423,7 @@ const Home = () => {
                     <i className="bi bi-telephone flex-shrink-0"></i>
                     <div>
                       <h3>Call Us</h3>
-                      <p>+1 5589 55488 55</p>
+                      <p>+91 9039096776</p>
                     </div>
                   </div>
     
@@ -429,7 +431,7 @@ const Home = () => {
                     <i className="bi bi-envelope flex-shrink-0"></i>
                     <div>
                       <h3>Email Us</h3>
-                      <p>newageservices.in@gmail.com</p>
+                      <p>contact@newageservices.in</p>
                     </div>
                   </div>
     

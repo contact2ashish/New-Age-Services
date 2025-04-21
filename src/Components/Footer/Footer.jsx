@@ -114,13 +114,13 @@ const Footer = () => {
         <div className="footer-contact-text">
           <h4>Contact Us</h4>
           <p>EKTA Tower</p>
-          <p>Block 7A/3, Dakshin Gangotri Supela Bhilai</p>
-          <p>Chhattisgarh - 490023</p>
+          <p>Block 7A/3, Dakshin Gangotri Supela Bhilai - 490023</p>
+          <p>Chhattisgarh, India</p>
           <p className="mt-3">
             <strong>Phone:</strong> <span>+91 9039096776</span>
           </p>
           <p>
-            <strong>Email:</strong> <span>newageservices.in@gmail.com</span>
+            <strong>Email:</strong> <span>contact@newageservices.in</span>
           </p>
         </div>
       </div>

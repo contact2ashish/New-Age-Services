@@ -222,7 +222,7 @@ const Services = () => {
       <section id = "CommunicationSolutions">
         <div className="communication-solutions-container container mb-5">
           <div className="titlebox text-center mb-5">
-            <h1>Communication Solutions</h1>
+            <h1>Communication</h1>
             <p>Services focused on voice communication, telephony, and conferencing:</p>
           </div>
 
@@ -348,7 +348,7 @@ const Services = () => {
       <section id = "SecuritySolutions">
         <div className="security-solutions-container container mb-5">
           <div className="titlebox text-center mb-5">
-            <h1>Security Solutions</h1>
+            <h1>Security</h1>
             <p>The security services are designed to protect your business from evolving cyber threats:</p>
           </div>
 

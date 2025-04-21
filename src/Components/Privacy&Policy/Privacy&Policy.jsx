@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
           <div className="mb-3">
             <h5>Contact Information</h5>
             <p>
-              If you have questions or concerns about our Privacy Policy, please contact us at: <strong>newageservices.in@gmail.com</strong>
+              If you have questions or concerns about our Privacy Policy, please contact us at: <strong>contact@newageservice.in</strong>
             </p>
           </div>
 
