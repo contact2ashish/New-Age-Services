@@ -79,7 +79,6 @@ const Home = () => {
             <div className="row gy-5 justify-content-between">
               <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <h2><span>Welcome to </span><span className="accent">New Age Services</span></h2>
-                <p>Transforming Challenges Into Tech Solutions</p>
                 <div className="d-flex">
                   <a href="#about" className="btn-get-started">Get Started</a>
                   {/*<a href="https://www.youtube.com" className="glightbox btn-watch-video d-flex align-items-center">
@@ -192,16 +191,18 @@ const Home = () => {
         <div className="container section-title" data-aos="fade-up" data-aos-delay="100">
             <h2>About Us</h2>
             <p>New Age Services stands as a comprehensive IT consulting partner dedicated to empowering organizations with tailored technology solutions.</p>
-          </div>
+            <p> 
+              In today's fast-paced digital landscape, businesses face numerous challenges, 
+              from managing complex IT infrastructures to ensuring data security and optimizing operational efficiency.
+            </p>
+        </div>
           
         <div className="row align-items-center" data-aos="fade-up" data-aos-delay="100">
-          <div className="col-md-6">
+          {/*<div className="col-md-6">
           <div><h3><span>Introduction to </span><span className="accent">New Age Services</span></h3></div>
-            <p>
+            <p> 
               In today's fast-paced digital landscape, businesses face numerous challenges, 
-              from managing complex IT infrastructures to ensuring data security and optimizing operational efficiency. 
-              New Age Services stands as a comprehensive IT consulting partner dedicated to empowering organizations 
-              with tailored technology solutions.
+              from managing complex IT infrastructures to ensuring data security and optimizing operational efficiency.
             </p>
           </div>
           <div className="col-md-6 about-us-image">
@@ -210,7 +211,7 @@ const Home = () => {
               alt="About Us"
               className="img-fluid rounded"
             />
-          </div>
+          </div>*/}
         </div>
       </section>
 
@@ -219,13 +220,12 @@ const Home = () => {
         <div className="row align-items-center flex-row-reverse">
           <div className="col-md-6" data-aos="fade-up" data-aos-delay="100">
           
-            <p><strong>Background:</strong></p>
+            <p><strong>Our Vision and Mission</strong></p>
             <p>
               Founded with the vision to bridge the gap between technology and business needs, 
               New Age Services has evolved into a trusted partner for organizations seeking reliable IT solutions. 
               Our commitment to excellence and innovation drives us to continuously adapt to the ever-changing technology landscape.
             </p>
-            <p><strong>Mission and Vision:</strong></p>
             <p>
               Our mission is to empower businesses through innovative technology solutions that enhance productivity and ensure seamless operations. 
               We envision a future where every organization can leverage technology to achieve its full potential, fostering growth and resilience.
@@ -337,7 +337,7 @@ const Home = () => {
                 <div className="icon">
                   <i className="bi bi-broadcast-pin"></i>
                 </div>
-                <h3>Connectivity Solutions</h3>
+                <h3>Connectivity</h3>
                 <p>Includes services that help businesses connect to the internet and optimize their networks:</p>
                 <Link to="/Services/Services#ConnectivitySolutions" className="readmore stretched-link">Read more <i className="bi bi-arrow-right"></i></Link>
               </div>
@@ -348,7 +348,7 @@ const Home = () => {
                 <div className="icon">
                   <i className="bi bi-telephone"></i>
                 </div>
-                <h3>Communication Solutions</h3>
+                <h3>Communication</h3>
                 <p>This includes services focused on voice communication, telephony, and conferencing:</p>
                 <Link to="/Services/Services#CommunicationSolutions" className="readmore stretched-link">Read more <i className="bi bi-arrow-right"></i></Link>
               </div>

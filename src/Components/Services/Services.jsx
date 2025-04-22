@@ -286,7 +286,7 @@ const Services = () => {
       <section id = "ConnectivitySolutions">
         <div className="connectivity-solutions-container container mb-5">
           <div className="titlebox text-center mb-5">
-            <h1>Connectivity Solutions</h1>
+            <h1>Connectivity</h1>
             <p>Includes services that help businesses connect to the internet and optimize their networks:</p>
           </div>
 
